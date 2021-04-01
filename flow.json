@@ -1,0 +1,33 @@
+{
+	"emulators": {
+		"default": {
+			"port": 3569,
+			"serviceAccount": "emulator-account"
+		}
+	},
+	"contracts": {
+		"Pixori": "./Pixori.cdc"
+	},
+	"networks": {
+		"emulator": {
+			"host": "127.0.0.1:3569",
+			"chain": "flow-emulator"
+		},
+		"testnet": {
+		  "host": "access.testnet.nodes.onflow.org:9000",
+		  "chain": "flow-testnet"
+		}
+	},
+	"accounts": {
+		"admin-account": {
+			"address": "db16a5e14c410280",
+			"keys": "5a92a4f5614f276b6f2ed4d81f01729a3b1d9b44afe71bf46bb10d058b249fb9",
+			"chain": "flow-testnet"
+		}
+	},
+	"deployments": {
+		"testnet": {
+			"admin-account": ["Pixori"]
+		  }
+	}
+}
