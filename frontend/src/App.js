@@ -1,12 +1,15 @@
-import './App.css';
-import AuthCluster from './AuthCluster';
-import TokenData from './TokenData';
-function App() {
+import React from "react"
+import {AuthCluster} from "./auth-cluster"
+import {InitCluster} from "./init-cluster"
+import {useCurrentUser} from "./hooks/current-user"
+
+export default function App() {
+  const cu = useCurrentUser()
+
   return (
-    <div className="App">
+    <div>
       <AuthCluster />
-      <TokenData />
+      <InitCluster address={cu.addr} />
     </div>
-  );
+  )
 }
-export default App;

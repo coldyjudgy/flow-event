@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as fcl from "@onflow/fcl";
 import * as t from "@onflow/types"
 
-
 var TokenData = () => {
+
+
   var [nftInfo, setNftInfo] = useState(null)
 
   var fetchTokenData = async () => {
@@ -23,7 +24,7 @@ var TokenData = () => {
         }
       `,
       fcl.args([
-        fcl.arg(user.addr(), t.Address), 
+        fcl.arg(fcl.currentUser.user.addr(), t.Address), 
       ]),
       ])
     
